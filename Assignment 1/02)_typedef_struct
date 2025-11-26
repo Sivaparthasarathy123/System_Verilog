@@ -1,0 +1,21 @@
+`timescale 1ns/1ps
+module typedef_struct;
+
+  typedef struct {
+    int opcode;
+    int addr;
+    int data;
+    string name;
+  } Instr_t;
+
+  Instr_t mem [10];  
+
+  initial begin
+    mem[0] = '{10, 100, 55, "LOAD"};
+    mem[1] = '{20, 200, 78, "STORE"};
+
+    $display("Instruction 0 = %p", mem[0]);
+    $display("Instruction 1 = %p", mem[1]);
+  end
+
+endmodule
