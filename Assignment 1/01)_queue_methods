@@ -1,0 +1,43 @@
+//
+`timescale 1ns/1ps
+module queue_methods;
+
+  int q[$];   
+  int pos,f,b;
+  
+  initial begin
+    // Push operations
+    q.push_back(10);
+    q.push_back(20);
+    q.push_back(30);
+    q.push_front(5);
+
+    $display("Queue after push : %p", q);
+    $display("Size = %0d", q.size());
+
+    // Insert at n/2 position
+    pos = q.size()/2;
+    q.insert(pos, 99);
+    $display("After insert at n/2 : %p", q);
+
+    // Insert at n position (end)
+    q.insert(q.size(), 77);
+    $display("After insert at n pos : %p", q);
+
+    // Insert at n-1 position
+    q.insert(q.size()-1, 55);
+    $display("After insert at n-1 : %p", q);
+
+    // Delete at position p
+    q.delete(2);
+    $display("After delete pos 2 : %p", q);
+
+    // pop operations
+     f = q.pop_front();
+     b = q.pop_back();
+    $display("Pop front=%0d, Pop back=%0d", f, b);
+
+    $display("Final Queue : %p", q);
+  end
+
+endmodule
