@@ -1,0 +1,12 @@
+// Gray code 
+module gray_code;
+    logic [3:0] bin;
+    logic [3:0] gray;
+
+    initial begin
+        for (bin = 0; bin < 16; bin++) begin
+            gray = bin ^ (bin >> 1);
+            $display("bin=%b  gray=%b", bin, gray);
+        end
+    end
+endmodule
