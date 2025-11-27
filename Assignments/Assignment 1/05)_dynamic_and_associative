@@ -1,0 +1,38 @@
+// dynamic_and_associative
+module dynamic_and_associative;
+  // Dynamic array
+  int dy_ar[];
+
+  initial begin
+     dy_ar = new[5];   
+    foreach(dy_ar[i]) 
+     dy_ar[i] = i*2;
+    $display("Dynamic array = %p", dy_ar);
+  end
+
+  // Associative array
+  int marks[string];   
+  string name;
+
+  initial begin
+    // Assign values
+    marks["siva"] = 90;
+    marks["harish"] = 88;
+    marks["divakar"] = 76;
+
+    foreach(marks[name])
+      $display("%s scored %0d marks", name, marks[name]);
+
+    // Check a element
+    if (marks.exists("siva"))
+      $display("Siva's marks exist");
+
+    // Delete
+    marks.delete("divakar");
+
+    $display("\nAfter deleting divakar:");
+    foreach(marks[name])
+      $display("%s = %0d", name, marks[name]);
+  end
+
+endmodule
