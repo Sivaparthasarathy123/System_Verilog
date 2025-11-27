@@ -1,0 +1,31 @@
+// foreach and shuffle
+module foreach_and_shuffle;
+  
+  int arr[];  
+  int size;
+  
+  initial begin
+    // Allocate dynamic array
+    arr = new[5];  
+    
+    // Give values using foreach
+    foreach (arr[i]) begin
+      arr[i] = i * 10;
+      $display("arr[%0d] = %0d", i, arr[i]);
+    end
+    
+    // Display size
+    size = arr.size();
+    $display("\nSize of the array = %0d", size);
+    
+    // Shuffle array 
+    arr.shuffle();
+    
+    // Display shuffled array
+    $display("\nShuffled array:");
+    foreach (arr[i])
+      $display("arr[%0d] = %0d", i, arr[i]);
+    
+  end
+  
+endmodule
