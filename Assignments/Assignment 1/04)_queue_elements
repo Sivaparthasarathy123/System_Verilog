@@ -1,0 +1,34 @@
+// Queue elements
+module queue_elements;
+  
+  int q[$];
+  
+  initial begin
+  
+    q = {100, 200, 300, 400};
+    $display("Initial Queue = %p", q);
+
+    // Insert 1 
+    q.insert(0, 1);
+    $display("After insert 1 = %p", q);
+
+    // Delete element in 3rd index 
+    q.delete(2);
+    $display("After delete index 3 = %p", q);
+
+    // Insert 9 as last element
+    q.push_back(9);
+    $display("After insert 9 last = %p", q);
+
+    // Shuffle the elements
+    q.shuffle();
+    $display("Shuffled Queue = %p", q);
+
+    // Reverse the queue
+    q.reverse();
+    $display("Reversed Queue = %p", q);
+
+  end
+
+endmodule
+  
