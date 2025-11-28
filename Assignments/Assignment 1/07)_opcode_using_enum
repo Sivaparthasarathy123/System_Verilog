@@ -1,0 +1,27 @@
+//opcode_using_enum
+// enumerated type
+typedef enum logic [3:0] {
+    ADD = 4'd2,
+    SUB = 4'd3,
+    JE  = 4'd10,
+    JNE = 4'd11,
+    LD  = 4'd12,
+    ST  = 4'd13
+} opcode;
+
+module opcode_operation;
+
+  opcode op;  
+
+  initial begin
+    op = ADD;
+    $display("Opcode = %0d (%s)", op, op.name());  
+
+    op = JNE;
+    $display("Opcode = %0d (%s)", op, op.name());
+
+    op = ST;
+    $display("Opcode = %0d (%s)", op, op.name());
+  end
+
+endmodule
