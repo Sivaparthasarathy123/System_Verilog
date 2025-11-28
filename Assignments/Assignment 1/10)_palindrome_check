@@ -1,0 +1,18 @@
+//palindrome_check
+module palindrome_check;
+
+  string s = "racecar";
+  string r = "";
+
+  initial begin
+    for (int i = s.len()-1; i >= 0; i--)
+        r = {r, s[i]};
+
+    
+    if (r==s)
+      $display("%s is a palindrome", s);
+    else
+      $display("%s is NOT a palindrome", s);
+  end
+
+endmodule
