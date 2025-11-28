@@ -1,0 +1,58 @@
+// Associative array
+module associative_methods;
+
+  int marks[string];      // associative array with string index
+  string index;           // used for iteration
+
+  initial begin
+    // Insert values
+    marks["siva"]    = 60;
+    marks["harish"]  = 88;
+    marks["divakar"] = 76;
+
+    $display("Associative Array = %p", marks);
+
+    // num()
+    $display("marks.num()  = %0d", marks.num());
+
+    // size()
+    $display("marks.size() = %0d", marks.size());
+
+    // exists()
+    if (marks.exists("siva"))
+      $display("siva exists");
+    else
+      $display("siva does not exist");
+
+    // first(index)
+    if (marks.first(index))
+      $display("First index = %0s  mark = %0d", index, marks[index]);
+
+    // last(index)
+    if (marks.last(index))
+      $display("Last index  = %0s  mark = %0d", index, marks[index]);
+
+    // next(index)
+    index = "harish";
+    if (marks.next(index))
+      $display("Next index after 'harish' = %0s  mark = %0d", index, marks[index]);
+    else
+      $display("No next index after 'harish'");
+
+    // prev(index)
+    index = "harish";
+    if (marks.prev(index))
+      $display("Previous index before 'harish' = %0s  mark = %0d", index, marks[index]);
+    else
+      $display("No previous index before 'harish'");
+
+    // delete specific element
+    marks.delete("harish");
+    $display("After deleting 'harish', array = %p", marks);
+
+    // delete whole array
+    marks.delete();
+    $display("After deleting whole array, size = %0d", marks.size());
+  end
+
+endmodule
