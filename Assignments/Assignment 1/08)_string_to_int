@@ -1,0 +1,13 @@
+// string to int
+module string_to_int;
+
+  string s = "12345";
+  int num;
+
+  initial begin
+    num = s.atoi();           
+    num = num + 100;           
+    $display("Result = %0d", num);
+  end
+
+endmodule
