@@ -1,0 +1,17 @@
+// queue_basics.sv
+module queue_basics;
+  int q[$];
+  int a;
+ initial begin
+   $display("--- Queue basics ---");
+   q.push_back(10);
+   q.push_back(20);
+   q.push_front(5);
+   $display("Queue after pushes: %p", q);
+   $display("size = %0d", q.size());
+   a = q.pop_front();
+   $display("popped front = %0d, queue = %p", a, q);
+   q.pop_back();
+   $display("after pop_back queue = %p", q);
+ end
+endmodule
