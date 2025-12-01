@@ -1,11 +1,13 @@
 //repeat(10) loop to print only even numbers using condition check.
-module foreach_square;
-  int arr[10];
+module repeat_even;
+  int i = 1;
 
   initial begin
-    foreach(arr[i])begin
-      arr[i] = i*i;
-      $display("arr[%0d] = %0d", i, arr[i]);
+    repeat(10) begin
+      if(i % 2 == 0)
+        $display(i);
+      i++;
     end
   end
 endmodule
+
