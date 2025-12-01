@@ -1,6 +1,6 @@
 //do-while loop to reverse a number
 module reverse_number;
-  int n = 1234, rev = 0;
+  int n = 7513, rev = 0;
 
   initial begin
     do begin
