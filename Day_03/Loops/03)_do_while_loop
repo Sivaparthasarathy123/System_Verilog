@@ -1,0 +1,13 @@
+//do-while loop to reverse a number
+module reverse_number;
+  int n = 1234, rev = 0;
+
+  initial begin
+    do begin
+      rev = rev*10 + (n % 10);
+      n = n / 10;
+    end while(n != 0);
+
+    $display("Reverse = %0d", rev);
+  end
+endmodule
