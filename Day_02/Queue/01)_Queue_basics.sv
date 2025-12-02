@@ -1,4 +1,4 @@
-// queue_basics.sv
+// queue_basics
 module queue_basics;
   int q[$];
   int a;
