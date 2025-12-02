@@ -1,6 +1,4 @@
 // enum data type
-
-
 module enum_datatype;
   
   typedef enum {
