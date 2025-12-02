@@ -1,5 +1,4 @@
 // typedef_union_unpacked_and_packed
-
 // union unpacked
 module unpacked_union;
 
