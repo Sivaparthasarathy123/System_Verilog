@@ -1,5 +1,5 @@
 // Process handles and self
-module q1_process_handles;
+module process_handles;
   process ph1, ph2, ph3;
 
   initial begin
