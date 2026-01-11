@@ -1,4 +1,4 @@
-// implication constraint
+// Implication constraint
 class Packet;
   randc bit is_control;
   randc int size;
