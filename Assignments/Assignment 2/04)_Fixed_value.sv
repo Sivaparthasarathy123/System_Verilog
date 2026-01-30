@@ -3,7 +3,7 @@ class fixed_val;
   rand bit [60:0] val;
 
   constraint fixed_bits {
-    val == {32'hFFFFFFFF, 29'h0};
+    val == {29'h0, 32'hFFFFFFFF};
 }
  
   function void print();
