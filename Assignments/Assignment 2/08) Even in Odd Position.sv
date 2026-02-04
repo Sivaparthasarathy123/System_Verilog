@@ -5,7 +5,7 @@ class SeqGen;
   // even numbers in odd positions
   constraint even_in_odd_pos {
     foreach(arr[i])
-      (i % 2 == 0) -> (arr[i] % 2 == 0);}
+      (i % 2 == 1) -> (arr[i] % 2 == 0);}
 endclass
 
 module SeqGen_tb;
