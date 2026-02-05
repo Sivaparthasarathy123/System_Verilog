@@ -4,8 +4,8 @@ class distribution;
 
     constraint data_dist_c {
       data dist {
-        [0:100]   := 10,   
-        [101:255] := 30  
+          [0:100]   :/ 10,   
+          [101:255] :/ 30  
       };
     }
   endclass
